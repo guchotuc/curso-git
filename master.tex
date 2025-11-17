@@ -1,35 +1,26 @@
 \documentclass{article}
 
-\usepackage[most]{tcolorbox}
-\tcbuselibrary{theorems}
-\newtcbtheorem[number within = section]{task}{Tarea}{
-    theorem style=plain,
-    arc=3mm,
-    boxrule=.5mm,
-    colframe=blue!50!black,
-    colback=white,
-    fonttitle=\sffamily\bfseries,
-    coltitle=blue!50!black,
-    before lower={\textcolor{blue!50!black}{\textsf{\textbf{Observaciones:}}}\ },
-}{}
-
-\usepackage[a4paper, centering,
-            text={17cm,26cm},
-            showframe=false]{geometry}
+\input{configuracion.tex}
 
 \begin{document}
 
-\section{Linea de Comandos}
+\section{Configuración Previa}
 
 \begin{task}{}{}
 
-hola
+\begin{itemize}
+    \item Ir a la página web:  https://git-scm.com/
+    \item Descargar la versión de git correspondiente a su sistema
+            operativo. La última versión de git vigente es la $2.51.2$
+    \item Ejecutar el archivo descargado y aceptar las opciones por 
+            por defecto.
+\end{itemize}
 
 \tcblower
 \vspace{5cm}
 \end{task}
 
-\section{Git}
+\section{Línea de Comando}
 
 \begin{task}{}{}
 
