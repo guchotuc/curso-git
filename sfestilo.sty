@@ -1,0 +1,119 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sfestilo}[2025/08/12 Estilo para cursos varios LaTeX package]
+
+\RequirePackage[hidelinks,colorlinks,linkcolor=gblue]{hyperref}
+\RequirePackage{multicol}
+\RequirePackage{enumitem}
+\RequirePackage{eucal,esint}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Secciones de cada trabajo práctico   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\teoria}{%
+\vspace{2mm}
+\begin{tcolorbox}[enhanced jigsaw, colframe=white, 
+    interior style={left color=gmblue, right color=glblue},
+    coltext=white]
+    {\LARGE \textbf{Desarrollo Teórico} \hfill \textcolor{gmblue}{\faFilePen}}
+\end{tcolorbox}}
+
+\newcommand{\problemas}{%
+\vspace{2mm}
+\begin{tcolorbox}[enhanced jigsaw, colframe=white, 
+    interior style={left color=gred, right color=glred},
+    coltext=white]
+    {\LARGE \textbf{Problemas} \hfill \textcolor{gmred}{\faWrench}}
+\end{tcolorbox}}
+
+\newcommand{\justifique}{%
+\vspace{2mm}
+\begin{tcolorbox}[enhanced jigsaw, colframe=white, 
+    interior style={left color=ggreen, right color=glgreen},
+    coltext=white]
+    {\LARGE \textbf{Verdadero o Falso}\hfill \textcolor{gmgreen}{\faShuffle}}
+\end{tcolorbox}}
+
+\newcommand{\ejlibro}{%
+\vspace{2mm}
+\begin{tcolorbox}[enhanced jigsaw, colframe=white, 
+    interior style={left color=gorange, right color=glorange},
+    coltext=white]
+    {\LARGE \textbf{Ejercicios Asignados de Libros}\hfill \textcolor{gmorange}{\faBook}}
+\end{tcolorbox}}
+
+\newcommand{\videos}{%
+\vspace{2mm}
+\begin{tcolorbox}[enhanced jigsaw, colframe=white, 
+    interior style={left color=gteal, right color=glteal},
+    coltext=white]
+    {\LARGE \textbf{Videos}\hfill \textcolor{gmteal}{\faClapperboard}}
+\end{tcolorbox}}
+
+\newcommand{\adicionales}{%
+\vspace{2mm}
+\begin{tcolorbox}[enhanced jigsaw, colframe=white, 
+    interior style={left color=gpink, right color=glpink},
+    coltext=white]
+    {\LARGE \textbf{Ejercicios Adicionales}\hfill \textcolor{gmpink}{\faCirclePlus}}
+\end{tcolorbox}}
+
+\newcommand{\bonus}{%
+\vspace{2mm}
+\begin{tcolorbox}[enhanced jigsaw, colframe=white, 
+    interior style={left color=gblue!80!black, right color=glblue!80!black},
+    coltext=white]
+    {\LARGE \textbf{Bonus}\hfill \textcolor{gblue!80!black}{\faStar}}
+\end{tcolorbox}}
+
+\newcommand{\evaluativo}{%
+\vspace{2mm}
+\begin{tcolorbox}[enhanced jigsaw, colframe=white, 
+    interior style={left color=gpurple, right color=glpurple},
+    coltext=white]
+    {\LARGE \textbf{Resolvé, analizá, comentá, explicá} \hfill \textcolor{gpurple}{\faCircleQuestion}}
+\end{tcolorbox}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Nuevas listas en linea y en columnas %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlist{multienum}{enumerate}{1}
+\setlist[multienum]{
+    label=\alph*),
+    before=\begin{multicols}{2},
+    after=\end{multicols}
+}
+
+\newlist{multienumrom}{enumerate}{1}
+\setlist[multienumrom]{
+    label=\roman*),
+    before=\begin{multicols}{2},
+    after=\end{multicols}
+}
+
+\newlist{cirlist}{itemize}{1}
+\setlist[cirlist]{
+    label = {\color{gblue}\faCircle[regular]}
+}
+
+\newlist{enlinealist}{enumerate*}{1}
+\setlist[enlinealist]{
+    label = \roman*) ,
+    itemjoin = {{; }}
+}
+
+\newlist{eleccionmultiple}{itemize}{1}
+\setlist[eleccionmultiple]{
+    label = {\large\faSquare[regular]},
+}
+
+\newlist{enumalph}{enumerate}{1}
+\setlist[enumalph]{
+    label = \alph*),
+}
+
+\newlist{enumrom}{enumerate}{1}
+\setlist[enumrom]{
+    label = (\roman*),
+}
+
