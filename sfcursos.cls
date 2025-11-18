@@ -35,12 +35,6 @@
 \hfuzz=.5em % disable false positive of overfull \hbox
 
 
-%%%         Logo de Microeconomía       %%
-%\NewDocumentCommand{\micrologo}{}%
-%{
-%    \fontfamily{LinuxLibertineT-OsF}\selectfont {\textcolor{gblue}{Micro}\textcolor{gorange}{economía}\ \textcolor{gblue}{I} }
-%}
-
 %% Document Propertities
 \global\let\@assignno\@empty
 \global\let\@semester\@empty
@@ -118,42 +112,22 @@
 \end{tcolorbox}
   }
 
-\titlespacing*{\section}{0em}{2.5\baselineskip}{1\baselineskip}
-
 \tcbuselibrary{theorems}
 \newtcbtheorem[number within = section]{task}{Tarea}{
     theorem style=plain,
     arc=3mm,
     boxrule=.5mm,
-    colframe=blue!50!black,
+    colframe=gblue,
     colback=white,
     fonttitle=\sffamily\bfseries,
-    coltitle=blue!50!black,
-    before lower={\textcolor{blue!50!black}{\textsf{\textbf{Observaciones:}}}\ },
+    coltitle=gblue,
+    before lower={\textcolor{gblue}{\textsf{\textbf{Observaciones:}}}\ },
 }{}
-
-%% Maths Settings
-\RequirePackage{mathtools}
-\RequirePackage{amsmath}
-\RequirePackage{amssymb}
-\RequirePackage{amsthm} % proof environment and others
-\RequirePackage{bm} % \bm command
-\RequirePackage{nicematrix}
-\numberwithin{equation}{section}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}{Corollary}[section]
-\newcommand{\hintstyle}{\itshape}
-\newcommand{\hint}[1]{({\hintstyle Ayuda: #1})}
-\DeclareMathOperator*{\argmin}{\arg\min}
-\DeclareMathOperator*{\argmax}{\arg\max}
 
 %% Captions Settings
 \RequirePackage[font=footnotesize,labelfont=bf]{caption}
 
 %% Color Boxes
-
 
 \newtcolorbox{informacion}[2][]{enhanced,
 before skip=2mm,after skip=2mm,
