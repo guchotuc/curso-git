@@ -1,0 +1,19 @@
+%\usepackage{listingsutf8}
+%% Definir comandos Git
+\lstdefinelanguage{git}[]{bash}{%
+    morekeywords = {git},%
+    morekeywords = [2]{init, clone, add, mv, restore, rm, bisect,%
+    diff, grep, log, show, status, backfill, branch, commit, merge,%
+    rebase, reset, switch, tag, fetch, pull, push, config, checkout,%
+    remote},%
+    sensitive = true,%
+    morecomment = [l]{\#},%
+}
+
+\lstdefinestyle{gitstyle}{%
+    language = git,%
+    basicstyle = \normalsize\ttfamily\bfseries,%
+    keywordstyle = \color{black},%
+    keywordstyle = {[2]\color{blue}\bfseries},%
+    commentstyle = \color{green},%
+}

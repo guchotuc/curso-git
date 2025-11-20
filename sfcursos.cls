@@ -85,19 +85,22 @@
 \definecolor{gmpurple}{RGB}{209,0,209}
 \definecolor{glpurple}{RGB}{255,184,255}
 
+%% Captions Settings
+\RequirePackage[font=footnotesize,labelfont=bf]{caption}
+
 %% TikZ Rule
 \RequirePackage{tikz}
 \usetikzlibrary{fadings, calc}
 \newcommand{\tikzrule}[3][]{\tikz{\fill[#1] (0,0) rectangle (#2,#3);}}
 
 %% Sections Settings
-\RequirePackage[explicit]{titlesec} % explained in https://tex.stackexchange.com/a/292307/234654
+\RequirePackage[explicit]{titlesec}
 \RequirePackage{suffix}
-% http://mirrors.ctan.org/macros/latex/contrib/titlesec/titlesec.pdf
 \pgfdeclarelayer{background}
 \pgfsetlayers{background,main}
 
 \RequirePackage[many]{tcolorbox}
+\tcbuselibrary{listingsutf8}
 \RequirePackage{varwidth}
 
 \titleformat{\section}[block] % Use the 'block' shape
@@ -124,9 +127,6 @@
     before lower={\textcolor{gblue}{\textsf{\textbf{Observaciones:}}}\ },
 }{}
 
-%% Captions Settings
-\RequirePackage[font=footnotesize,labelfont=bf]{caption}
-
 %% Color Boxes
 
 \newtcolorbox{informacion}[2][]{enhanced,
@@ -151,6 +151,11 @@ middle color=tcbcolback!95!black]
 },
 fonttitle=\bfseries,
 title={#2},#1}
+
+\newtcblisting{cmdshell}{colback=black!10,colupper=black, boxrule=0mm,
+listing only,listing options={style=tcblatex,language=bash},
+every listing line={{\small\ttfamily \$ }}}
+
 
 
 %% Header and Footer
@@ -195,7 +200,7 @@ title={#2},#1}
         \fontfamily{LinuxLibertineT-OsF}\selectfont
         \vspace*{-\firstfooteradditionalheight}
         %\vspace{-0.05em}
-        \tikzrule[gblue, path fading=west]{.5\textwidth}{.15em}%
+        \tikzrule[ggreen, path fading=west]{.5\textwidth}{.15em}%
         \tikzrule[gblue, path fading=east]{.5\textwidth}{.15em}
 
         \footnotesize\centering
@@ -235,7 +240,7 @@ title={#2},#1}
         \LARGE\@title~{\fontfamily{bch}\selectfont\@assignno}
     \end{minipage}
     \\[.3em]
-    \tikzrule[gmblue]{\textwidth}{.3em}
+    \tikzrule[ggreen]{\textwidth}{.3em}
 
     \ifx\@mainproblem\@empty
         \vspace{2mm}

@@ -1,0 +1,41 @@
+\documentclass[a4paper]{article}
+
+\usepackage[inner=2.0cm,outer=2.0cm,top=1cm,bottom=3.5cm]{geometry}
+\usepackage{xcolor}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listingsutf8}
+
+\lstdefinelanguage{git}{%
+    morekeywords = {git},%
+    morekeywords = [2]{init, clone, add, mv, restore, rm, bisect,%
+    diff, grep, log, show, status, backfill, branch, commit, merge,%
+    rebase, reset, switch, tag, fetch, pull, push, config, checkout,%
+    remote},%
+    sensitive = true,%
+    morecomment = [l]{\#},%
+}
+
+\lstdefinestyle{gitstyle}{%
+    language = git,%
+    basicstyle = \normalsize\ttfamily,%
+    keywordstyle = \color{red}\textbf,%
+    keywordstyle = {[2]\color{blue}\bfseries},%
+    commentstyle = \color{green},%
+}
+
+
+\newtcblisting{cmdshell}{
+    colback=black!15, colframe=yellow!75!black,%
+    listing only, listing options={style=gitstyle, language=git},%
+    every listing line = {\textcolor{yellow}{\ttfamily\bfseries root \$ }}
+}
+
+\begin{document}
+
+\begin{cmdshell}
+cd desktop
+git config --global user.name "Santiago" 
+\end{cmdshell}
+
+\end{document}
