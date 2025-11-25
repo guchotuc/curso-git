@@ -59,6 +59,7 @@
 \RequirePackage{xcolor}
 \RequirePackage[fixed]{fontawesome6}
 \RequirePackage{libertine}
+\RequirePackage{amssymb}
 
 \definecolor{gblue}{RGB}{23,78,166}
 \definecolor{gmblue}{RGB}{66,103,210}
@@ -116,7 +117,32 @@
   }
 
 \tcbuselibrary{theorems}
-\newtcbtheorem[number within = section]{task}{Tarea}{
+\newtcbtheorem[number within = section]{tarea}{Tarea}{
+    theorem style=plain,
+    description delimiters none,
+    terminator sign none,
+    separator sign={\ $\blacktriangleright$\ },
+    arc=3mm,
+    boxrule=.5mm,
+    colframe=gblue,
+    colback=white,
+    fonttitle=\sffamily\bfseries,
+    coltitle=gblue,
+    before lower={\textcolor{gblue}{\textsf{\textbf{Anotaciones:}}}\ },
+}{}
+
+\newtcbtheorem[use counter from=tarea]{anotaciones}{Tarea}{
+    theorem style=plain,
+    arc=3mm,
+    boxrule=.5mm,
+    colframe=gred,
+    colback=white,
+    fonttitle=\sffamily\bfseries,
+    coltitle=gred,
+    before lower={\textcolor{gred}{\textsf{\textbf{Anotaciones:}}}\ },
+}{}
+
+\newtcbtheorem[use counter from=tarea]{rdo}{Tarea}{
     theorem style=plain,
     arc=3mm,
     boxrule=.5mm,
@@ -126,6 +152,7 @@
     coltitle=gblue,
     before lower={\textcolor{gblue}{\textsf{\textbf{Anotaciones:}}}\ },
 }{}
+
 
 %% Color Boxes
 
