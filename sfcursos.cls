@@ -54,13 +54,18 @@
 \newcommand{\contacto}[1]{\gdef\@contacto{#1}} % Información de contacto
 \newcommand{\ciclo}[1]{\gdef\@ciclo{#1}} % Año lectivo
 
-%% Fonts and Colors
+%% Carga de paquetes
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xcolor}
 \RequirePackage[fixed]{fontawesome6}
 \RequirePackage{libertine}
 \RequirePackage{amssymb}
+\RequirePackage[hidelinks,colorlinks,linkcolor=gblue]{hyperref}
+\RequirePackage{multicol}
+\RequirePackage{enumitem}
+%\RequirePackage{eucal,esint}
 
+% Definición de colores
 \definecolor{gblue}{RGB}{23,78,166}
 \definecolor{gmblue}{RGB}{66,103,210}
 \definecolor{glblue}{RGB}{210,227,252}
@@ -131,28 +136,6 @@
     before lower={\textcolor{gblue}{\textsf{\textbf{Anotaciones:}}}\ },
 }{}
 
-\newtcbtheorem[use counter from=tarea]{anotaciones}{Tarea}{
-    theorem style=plain,
-    arc=3mm,
-    boxrule=.5mm,
-    colframe=gred,
-    colback=white,
-    fonttitle=\sffamily\bfseries,
-    coltitle=gred,
-    before lower={\textcolor{gred}{\textsf{\textbf{Anotaciones:}}}\ },
-}{}
-
-\newtcbtheorem[use counter from=tarea]{rdo}{Tarea}{
-    theorem style=plain,
-    arc=3mm,
-    boxrule=.5mm,
-    colframe=gblue,
-    colback=white,
-    fonttitle=\sffamily\bfseries,
-    coltitle=gblue,
-    before lower={\textcolor{gblue}{\textsf{\textbf{Anotaciones:}}}\ },
-}{}
-
 
 %% Color Boxes
 
@@ -183,6 +166,36 @@ title={#2},#1}
 listing only,listing options={style=gitstyle,language=git},
 every listing line={{\small\ttfamily \$ }}}
 
+
+\newlist{cirlist}{itemize}{1}
+\setlist[cirlist]{
+    label = {\color{gblue}\faCircle[regular]}
+}
+
+\newlist{chklst}{itemize}{1}
+\setlist[chklst]{
+    label = {\large\faSquare[regular]},
+}
+
+%\usepackage{listingsutf8}
+%% Definir comandos Git
+\lstdefinelanguage{git}{%
+    morekeywords = {git, pwd, mkdir, ls, clear, cd},%
+    morekeywords = [2]{init, clone, add, mv, restore, rm, bisect,%
+    diff, grep, log, show, status, backfill, branch, commit, merge,%
+    rebase, reset, switch, tag, fetch, pull, push, config, checkout,%
+    remote},%
+    sensitive = true,%
+    morecomment = [l]{\#},%
+}
+
+\lstdefinestyle{gitstyle}{%
+    language = git,%
+    basicstyle = \normalsize\ttfamily,%
+    keywordstyle = \color{gblue},%
+    keywordstyle = {[2]\color{gred}},%
+    commentstyle = \color{green},%
+}
 
 
 %% Header and Footer
