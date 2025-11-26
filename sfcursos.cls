@@ -184,7 +184,7 @@ every listing line={{\small\ttfamily \$ }}}
     morekeywords = [2]{init, clone, add, mv, restore, rm, bisect,%
     diff, grep, log, show, status, backfill, branch, commit, merge,%
     rebase, reset, switch, tag, fetch, pull, push, config, checkout,%
-    remote},%
+    remote, version},%
     sensitive = true,%
     morecomment = [l]{\#},%
 }
@@ -194,7 +194,7 @@ every listing line={{\small\ttfamily \$ }}}
     basicstyle = \normalsize\ttfamily,%
     keywordstyle = \color{gblue},%
     keywordstyle = {[2]\color{gred}},%
-    commentstyle = \color{green},%
+    commentstyle = \color{ggreen},%
 }
 
 
